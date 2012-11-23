@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ch.sws.ds.banksys</groupId>
+	<artifactId>banksys-parent</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>BankSys Project DS FS12</name>
+	<description>BankSys Project DS FS12 (Feuz, Kamber, Rolli)</description>
+	<organization>
+		<name>BFH</name>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>feuzl1</id>
+			<name>Lukas Feuz</name>
+			<email>feuzl1@bluewin.ch</email>
+		</developer>
+	</developers>
+
+	<repositories>
+		<repository>
+			<id>Maven central</id>
+			<name>Maven central</name>
+			<url>http://repo1.maven.org/maven2/</url>
+		</repository>
+		<repository>
+			<id>jpdfunit-repo</id>
+			<url>http://jpdfunit.sourceforge.net/repo</url>
+		</repository>
+	</repositories>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<artifactId>banksys-common</artifactId>
+				<groupId>ch.sws.ds.banksys</groupId>
+				<version>1.0.0</version>
+			</dependency>
+			<dependency>
+				<artifactId>banksys-ebanking-interfaces</artifactId>
+				<groupId>ch.sws.ds.banksys</groupId>
+				<version>1.0.0</version>
+			</dependency>
+			<dependency>
+				<artifactId>banksys-atm-interfaces</artifactId>
+				<groupId>ch.sws.ds.banksys</groupId>
+				<version>1.0.0</version>
+			</dependency>
+			<dependency>
+				<artifactId>banksys-counter-interfaces</artifactId>
+				<groupId>ch.sws.ds.banksys</groupId>
+				<version>1.0.0</version>
+			</dependency>
+			<dependency>
+				<artifactId>banksys-server-backend</artifactId>
+				<groupId>ch.sws.ds.banksys.server</groupId>
+				<version>1.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.derby</groupId>
+				<artifactId>derby</artifactId>
+				<version>10.8.1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.17</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.10</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>1.2</version>
+				<scope>runtime</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<modules>
+		<module>banksys-common</module>
+		<module>banksys-atm-interfaces</module>
+		<module>banksys-counter-interfaces</module>
+		<module>banksys-ebanking-interfaces</module>
+		<module>banksys-server</module>
+		<module>banksys-ebanking</module>
+		<module>banksys-atm</module>
+		<module>banksys-counter</module>
+		<module>banksys-bundle</module>
+	</modules>
+
+</project>

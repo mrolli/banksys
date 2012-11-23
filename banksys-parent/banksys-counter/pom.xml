@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>banksys-counter</artifactId>
+	<groupId>ch.sws.ds.banksys.counter</groupId>
+	<packaging>pom</packaging>
+	<name>banksys-counter</name>
+	<description>The counter application of the banksys project</description>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<artifactId>banksys-counter-interfaces</artifactId>
+				<groupId>ch.sws.ds.banksys.server</groupId>
+				<version>1.0.0</version>
+			</dependency>
+			<dependency>
+				<artifactId>banksys-counter-app</artifactId>
+				<groupId>ch.sws.ds.banksys.counter</groupId>
+				<version>1.0.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<modules>
+		<module>banksys-counter-app</module>
+		<module>banksys-counter-bundle</module>
+	</modules>
+	<parent>
+		<groupId>ch.sws.ds.banksys</groupId>
+		<artifactId>banksys-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+</project>

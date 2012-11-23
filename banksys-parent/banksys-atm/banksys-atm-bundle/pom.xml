@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>banksys-atm-bundle</artifactId>
+	<packaging>jar</packaging>
+	<name>banksys-atm-bundle</name>
+	<description>The atm application bundle of the banksys project</description>
+
+	<dependencies>
+		<dependency>
+			<artifactId>banksys-atm-interfaces</artifactId>
+			<groupId>ch.sws.ds.banksys</groupId>
+		</dependency>
+		<dependency>
+			<artifactId>banksys-atm-app</artifactId>
+			<groupId>ch.sws.ds.banksys.atm</groupId>
+		</dependency>
+		<dependency>
+			<artifactId>banksys-common</artifactId>
+			<groupId>ch.sws.ds.banksys</groupId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib</classpathPrefix>
+							<mainClass>ch.sws.ds.banksys.atm.Atm</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>dist</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptors>
+								<descriptor>src/main/resources/assemblies/bundle.xml</descriptor>
+							</descriptors>
+							<finalName>banksys-atm</finalName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<parent>
+		<groupId>ch.sws.ds.banksys.atm</groupId>
+		<artifactId>banksys-atm</artifactId>
+		<version>1.0.0</version>
+	</parent>
+</project>

@@ -1,0 +1,1 @@
+java -jar banksys-server-bundle.jar

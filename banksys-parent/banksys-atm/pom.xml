@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>banksys-atm</artifactId>
+	<groupId>ch.sws.ds.banksys.atm</groupId>
+	<packaging>pom</packaging>
+	<name>banksys-atm</name>
+	<description>The atm application of the banksys project</description>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<artifactId>banksys-atm-interfaces</artifactId>
+				<groupId>ch.sws.ds.banksys.server</groupId>
+				<version>1.0.0</version>
+			</dependency>
+			<dependency>
+				<artifactId>banksys-atm-app</artifactId>
+				<groupId>ch.sws.ds.banksys.atm</groupId>
+				<version>1.0.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<modules>
+		<module>banksys-atm-app</module>
+		<module>banksys-atm-bundle</module>
+	</modules>
+	<parent>
+		<groupId>ch.sws.ds.banksys</groupId>
+		<artifactId>banksys-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+</project>

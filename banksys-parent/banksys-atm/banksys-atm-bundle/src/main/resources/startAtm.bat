@@ -1,0 +1,1 @@
+java -jar banksys-atm-bundle.jar
